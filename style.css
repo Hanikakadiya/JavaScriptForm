@@ -1,0 +1,106 @@
+html body {
+    width: 100%;
+}
+
+* {
+    padding: 0%;
+    margin: 0%;
+}
+.form-handler{
+    background-color: black;
+    border: 2px solid purple;
+    box-shadow: 0px 0px 50px 12px  rgba(127, 4, 138, 0.436);
+}
+
+.form-holder {
+    /* background-color:black ;  */
+    height: auto;
+}
+.Banner-Info{
+    background-color: purple;
+    width: 500px;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 30% 100%, 0 100%);
+}
+input{
+    outline: none;
+    background: transparent;
+    
+}
+button{
+    background-color: purple;
+    outline: none;
+    width: 200px;
+    
+}
+.error-msg{
+    font-size: 10px;
+}
+.Banner-Info-login
+{
+    background-color: purple;
+    width: 500px;
+    height:100%;
+/* Top-Left: 30% (Starts partway across the top)
+    Top-Right: 100% (Goes all the way to the right edge)
+    Bottom-Right: 100% (Straight down the right side)
+    Bottom-Left: 0% (Stretches all the way left at the bottom)
+  */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 75% 100%);
+
+}
+.form-handler-login{
+    background-color: black;
+    border: 2px solid purple;
+    box-shadow: 0px 0px 50px 12px  rgba(127, 4, 138, 0.436);
+    
+}
+.Welcome-panel-login {
+    text-align: end;
+}
+/* Smoothly animate the button when hovered */
+button[type="submit"] {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-3px); /* Lifts the button up slightly */
+    box-shadow: 0px 8px 15px rgba(168, 85, 247, 0.4); /* Adds a purple glowing shadow */
+}
+
+/* Smoothly animate the text box underline when clicked */
+.border-bottom {
+    transition: border-color 0.3s ease;
+}
+
+.border-bottom:focus {
+    border-color: #a855f7 !important; /* Changes the white line to purple */
+}
+/* 1. Define the animation rules */
+@keyframes slideInFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Start invisible and pushed to the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* End fully visible in its normal spot */
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* 2. Attach the animations to your form parts */
+.Welcome-panel {
+    /* Play the slide animation for 0.8 seconds */
+    animation: slideInFromLeft 0.8s ease-out forwards; 
+}
+
+.Form-container {
+    /* Play the fade animation, but wait 0.3 seconds before starting so the welcome panel loads first! */
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 0.8s ease-out 0.3s forwards; 
+}
